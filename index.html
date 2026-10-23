@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: aqua;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+        h1 { color: black;}
+            .btn-container  {
+                margin-top: 20px;
+                position: relative;
+                height: 100px;
+                width: 300px;
+            }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        #yesBtn {
+            background-color: white;
+            color: black;
+            position: absolute;
+            left: 50px;
+        }
+        #noBtn {
+            background-color: white;
+            color: black;
+            position: absolute;
+            left: 180px;
+        }
+        </style>
+</head>
+<body>
+    <h1 id="question">Can Yoselin run 50 miles without stopping</h1>
+    <div class="btn-container">
+        <button id="yesBtn" onclick="sayYes()">Yes!</button>
+        <button id="noBtn" onmouseover="moveNo()">No</button>
+    </div>
+
+    <script>
+        function sayYes() {
+            document.getElementById('question').innerText ='Yay!! Good Choice🌚';
+            document.getElementById('yesBtn').style.display ='none';
+            document.getElementById('noBtn').style.display ='none';
+        }
+        
+        function moveNo() {
+            const x = Math.random() * (window.innerWidth - 150);
+            const y = Math.random() * (window.innerHeight - 150);
+            const noBtn = document.getElementById('noBtn');
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+        }
+        </script>
+</body>
+</html>
